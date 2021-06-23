@@ -28,6 +28,7 @@ config.read(CONFIG_FILE)
 
 
 #
+
 #
 
 if not config.has_section('commit-msg'):
