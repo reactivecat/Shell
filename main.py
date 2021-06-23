@@ -25,6 +25,11 @@ CONFIG_FILE = '.git' + os.path.sep + 'hooks' + os.path.sep + 'git-hooks.conf'
 config = configparser.ConfigParser()
 config.read(CONFIG_FILE)
 
+
+#
+#
+
+
 if not config.has_section('commit-msg'):
     print('未找到配置文件: ' + CONFIG_FILE)
     sys.exit(1)
