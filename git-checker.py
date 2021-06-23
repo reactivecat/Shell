@@ -17,17 +17,17 @@ print("hi ,,,,,,,,,,,,,,,,,,xxxxxdddd,,,,,,,")
 argvs = sys.argv
 print(len(argvs))
 print("----------------------->")
-commit_message_file = open(sys.argv[0])
+commit_message_file = open(sys.argv[1])
 commit_message = commit_message_file.read().strip()
 print(commit_message)
-CONFIG_FILE = '.git' + os.path.sep + 'hooks' + os.path.sep + 'git-hookxyazs.conf'
+CONFIG_FILE = '.git' + os.path.sep + 'hooks' + os.path.sep + 'git-hook.conf'
 
 config = configparser.ConfigParser()
 config.read(CONFIG_FILE)
 print('hello,guy!')
 if not config.has_section('commit-msg'):
     print('未找到配置文件: ' + CONFIG_FILE)
-    sys.exit(0)
+    sys.exit(1)
 
 cm_regex = str(config.get('commit-msg', 'cm_regex')).strip()
 cm_doc_url = str(config.get('commit-msg', 'cm_doc_url')).strip()
@@ -40,7 +40,7 @@ if not ret.endswith(cm_email_suffix):
     print('==> Commit email格式出错，请将git config中邮箱设置为标准邮箱格式，公司邮箱后缀为：' + cm_email_suffix)
     print('==================================================================================\n')
     commit_message_file.close()
-    sys.exit(0)
+    sys.exit(1)
 
 # 匹配规则, Commit 要以如下规则开始
 if not re.match(cm_regex, commit_message):
@@ -51,5 +51,5 @@ if not re.match(cm_regex, commit_message):
         print('==> Commit 规范文档: ' + cm_doc_url)
     print('==================================================================================\n')
     commit_message_file.close()
-    sys.exit(0)
+    sys.exit(1)
 commit_message_file.close()
