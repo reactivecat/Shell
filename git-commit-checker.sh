@@ -1,2 +1,3 @@
 #!/bin/bash
-echo `cat $1`
+hi=`cat $1`
+echo "$hi ------>"
