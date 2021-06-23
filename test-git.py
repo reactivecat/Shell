@@ -9,6 +9,7 @@ if sys.version > '3':
     import configparser as configparser
 else:
     PY3 = False
+    reload(sys)
     import ConfigParser as configparser
 
 argvs = sys.argv
