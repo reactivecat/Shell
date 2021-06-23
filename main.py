@@ -13,6 +13,7 @@ else:
     import ConfigParser as configparser
 
     reload(sys)
+
     sys.setdefaultencoding('utf8')
 
 argvs = sys.argv
