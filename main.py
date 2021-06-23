@@ -25,6 +25,8 @@ CONFIG_FILE = '.git' + os.path.sep + 'hooks' + os.path.sep + 'git-hooks.conf'
 
 
 
+
+
 config = configparser.ConfigParser()
 config.read(CONFIG_FILE)
 
