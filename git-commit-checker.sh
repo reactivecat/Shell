@@ -5,4 +5,4 @@ echo "${commit_msg},melo girl!"
 echo "????$0 $1 $2 $3 hello"
 echo 'args:---- '$0''
 commit_message=$(cat "${$0:?Missing commit message file}")
-echo  "content of commit_message: $commit_message"
+echo  "content of commit_message: $commit_message lllllllll"
