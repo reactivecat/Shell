@@ -24,7 +24,6 @@ commit_message = commit_message_file.read().strip()
 CONFIG_FILE = '.git' + os.path.sep + 'hooks' + os.path.sep + 'git-hooks.conf'
 
 
-dddddddd
 config = configparser.ConfigParser()
 config.read(CONFIG_FILE)
 
