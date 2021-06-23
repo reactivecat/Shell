@@ -1,3 +1,3 @@
 #!/bin/bash
-hi=`cat $1`
-echo "$hi ------>"
+commit_msg=$(cat "${$1:?Missing commit message file}")
+echo "commit_msg ------>"
