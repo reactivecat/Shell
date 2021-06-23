@@ -11,7 +11,7 @@ else:
     PY3 = False
     reload(sys)
     import ConfigParser as configparser
-ddddd
+
 argvs = sys.argv
 print(argvs)
 commit_message_file = open(sys.argv[1])
