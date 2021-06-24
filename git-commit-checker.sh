@@ -1,4 +1,10 @@
 #!/bin/bash
-hi=`cat $1`
+current_commit_message=`cat $1`
 commit_messages=`git log --oneline`
-echo $commit_messages
+action=${current_commit_message:0:7}
+moduleName=${current_commit_message:7:9}
+message=${current_commit_message:10:-1}
+echo "action:$action"
+echo 'message:'"$message"''
+echo "module:"/bash/here/"$moduleName"
+echo "$commit_messages"
